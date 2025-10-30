@@ -1,0 +1,986 @@
+/* --- Root Variables --- */
+:root {
+    --color-primary: #FFD700; /* Gold/Yellow (Main Accent) */
+    --color-secondary: #FFC300; /* Slightly darker yellow (Background Accent) */
+    --color-dark: #333333; /* Dark text/background (Main Text) */
+    --color-light: #F8F8F8; /* Light background (Section Backgrounds) */
+    --color-accent: #8B4513; /* Brown for contrast (like baked plantain - Secondary Accent) */
+    --color-text: #444444; /* Standard Paragraph Text */
+    --color-white: #ffffff;
+    --font-sans: 'Arial', sans-serif;
+    --font-serif: 'Georgia', serif; /* Added for optional use in headings */
+}
+
+/* --- Base Styles --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    background-color: var(--color-light);
+    color: var(--color-text);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2, h3, h4 {
+    color: var(--color-dark);
+    margin-bottom: 0.5em;
+    text-align: center;
+    font-family: var(--font-serif);
+}
+
+.section-padding {
+    padding: 80px 0; /* Increased general section padding for better spacing */
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    background-color: var(--color-primary);
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--color-dark);
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: var(--color-dark);
+    padding: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu ul li a:hover {
+    color: var(--color-white);
+}
+
+.nav-cta {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-left: 20px;
+}
+
+.nav-cta:hover {
+    background-color: var(--color-dark);
+}
+
+.hamburger-btn {
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    color: var(--color-dark);
+    cursor: pointer;
+    display: none;
+}
+
+
+/* --- Hero Section --- */
+.hero {
+    background: url('..//images/IMG-20251030-WA0230.jpg') no-repeat center center/cover; /* Using uploaded image as placeholder */
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-white);
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    z-index: 1;
+}
+
+.hero h2 {
+    font-size: 3em;
+    color: var(--color-white);
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: var(--color-primary);
+    color: var(--color-dark);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: var(--color-secondary);
+}
+
+
+/* --- Our Story/About Section Styles (BEAUTIFUL & DYNAMIC) --- */
+.story-section {
+    background-color: var(--color-white);
+    text-align: center;
+}
+
+.story-heading {
+    margin-bottom: 10px;
+    font-size: 2.5em;
+    color: var(--color-dark);
+}
+
+.story-intro-text {
+    font-size: 1.1em;
+    color: var(--color-text);
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.story-feature-block {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 70px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.story-feature-block.reverse-layout {
+    flex-direction: row-reverse;
+}
+
+.story-details-card {
+    flex: 1;
+    text-align: left;
+    padding: 25px;
+    background-color: var(--color-light);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid var(--color-primary);
+}
+
+.story-details-card h4 {
+    font-size: 1.6em;
+    color: var(--color-accent);
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.feature-icon {
+    font-size: 2.5em;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.story-value-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.story-value-list li {
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.story-value-list .fas {
+    color: var(--color-accent);
+    margin-right: 8px;
+}
+
+.story-image-container {
+    flex: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    border: 4px solid var(--color-secondary);
+    transition: box-shadow 0.3s ease;
+}
+
+.story-image-container:hover {
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+.story-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.story-image-container:hover .story-img {
+    transform: scale(1.05);
+}
+
+.story-final-feature-block {
+    text-align: center;
+    max-width: 1000px;
+    margin: 30px auto 50px auto;
+    background-color: var(--color-light);
+    border-radius: 12px;
+    padding: 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.story-final-feature-block .full-width-image {
+    border: none;
+    border-radius: 12px 12px 0 0;
+    box-shadow: none;
+    height: 300px;
+}
+
+.story-final-feature-block .full-width-image .story-img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.final-feature-details {
+    padding: 30px;
+}
+
+
+/* --- Services / Products Section Styles (COMPACT & ENHANCED) --- */
+.services-section {
+    background-color: var(--color-light);
+}
+
+.services-heading {
+    margin-bottom: 10px;
+    font-size: 2.2em;
+    color: var(--color-dark);
+}
+
+.services-intro-text {
+    text-align: center;
+    font-size: 1.1em;
+    color: var(--color-text);
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.services-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.service-card {
+    background-color: var(--color-white);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service-details {
+    padding: 20px;
+}
+
+.service-card h4 {
+    margin-top: 5px;
+    margin-bottom: 8px;
+    font-size: 1.3em;
+    color: var(--color-dark);
+    text-align: left;
+}
+
+.service-card p {
+    margin-bottom: 15px;
+    font-size: 0.95em;
+}
+
+.service-icon.standard-icon {
+    font-size: 2em;
+    color: var(--color-accent);
+    padding: 8px;
+    border-radius: 5px;
+    background-color: var(--color-secondary);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.service-image-container {
+    height: 150px;
+    overflow: hidden;
+}
+
+.service-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.service-card:hover .service-img {
+    transform: scale(1.1);
+}
+
+/* --- Featured Service Card (Plantain Chips) --- */
+.featured-service-card {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: var(--color-dark);
+    border: 3px solid var(--color-accent);
+}
+
+.featured-service-card .service-details {
+    flex: 2;
+    padding: 30px;
+}
+
+.featured-service-card .service-image-container {
+    flex: 1;
+    height: auto;
+    border-radius: 0 10px 10px 0;
+}
+.featured-service-card .service-image-container .service-img {
+    object-fit: contain;
+}
+
+.featured-service-card h4 {
+    color: var(--color-dark);
+    font-size: 1.8em;
+}
+
+.featured-tag {
+    font-weight: bold;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    margin-bottom: 10px !important;
+}
+
+.featured-service-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 15px 0;
+}
+.featured-service-card ul li {
+    font-weight: 500;
+}
+.featured-service-card ul .fa-check-circle {
+    color: var(--color-accent);
+    margin-right: 5px;
+}
+.featured-service-card .cta-button {
+    padding: 8px 20px;
+    font-size: 0.95em;
+}
+
+/* Style for Digital Services (Text-focused) */
+.standard-service-card.text-focused .service-details {
+    /* Ensures text-focused cards stretch vertically on desktop */
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+}
+.standard-service-card.text-focused ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 0; /* Remove extra margin at the bottom */
+}
+.standard-service-card.text-focused ul li {
+    margin-bottom: 5px;
+    color: var(--color-accent);
+}
+.standard-service-card.text-focused ul .fas {
+    color: var(--color-primary);
+    margin-right: 5px;
+}
+
+
+/* --- Gallery Section Styles (Compact Unique Grid) --- */
+.gallery-section {
+    background-color: var(--color-white);
+    text-align: center;
+}
+
+.gallery-heading {
+    color: var(--color-dark);
+    font-size: 2em;
+    margin-bottom: 8px;
+}
+
+.gallery-intro-text {
+    font-size: 1em;
+    color: var(--color-text);
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(120px, auto);
+    gap: 10px;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 2px solid var(--color-secondary);
+}
+
+.gallery-item:hover {
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- Compact Unique Grid Layout Styling --- */
+.gallery-grid .gallery-item:nth-child(1) { grid-row: span 2; }
+.gallery-grid .gallery-item:nth-child(4) { grid-column: span 2; }
+.gallery-grid .gallery-item:nth-child(8) { grid-row: span 2; }
+.gallery-grid .gallery-item:nth-child(10) { grid-column: span 2; }
+.gallery-grid .gallery-item:nth-child(13) { grid-row: span 2; }
+
+
+/* --- CEO Section (Dual Founders) - COMPACT VERSION --- */
+.ceo-section {
+    background-color: var(--color-white);
+    border-top: 2px solid var(--color-secondary);
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.ceo-cards-wrapper {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 20px auto 0;
+}
+
+.ceo-card {
+    flex: 1 1 48%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: var(--color-light);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.ceo-card:hover {
+    transform: translateY(-3px);
+}
+
+.ceo-image {
+    flex-shrink: 0;
+    width: 130px;
+    height: 130px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    border: 4px solid var(--color-accent);
+    margin-bottom: 15px;
+}
+.ceo-image.jane-image { background-color: var(--color-primary); }
+.ceo-image.john-image { background-color: var(--color-secondary); }
+
+
+.ceo-details {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.ceo-details h4 {
+    text-align: center;
+    color: var(--color-accent);
+    margin-bottom: 8px;
+    font-size: 1.2em;
+}
+
+.ceo-details .quote {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--color-dark);
+    margin: 10px 0;
+    border-left: none;
+    border-top: 1px dashed var(--color-primary);
+    border-bottom: 1px dashed var(--color-primary);
+    padding: 8px 0;
+    font-size: 0.9em;
+}
+
+
+/* --- Customer Reviews Section --- */
+.reviews-section {
+    background-color: var(--color-secondary);
+    text-align: center;
+}
+
+.review-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.review-card {
+    background-color: var(--color-white);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.review-text {
+    font-style: italic;
+    margin-bottom: 15px;
+    color: var(--color-text);
+}
+
+.reviewer-name {
+    font-weight: bold;
+    color: var(--color-accent);
+}
+
+.rating {
+    color: var(--color-primary);
+    font-size: 1.2em;
+    margin-top: 5px;
+}
+
+
+/* --- Quick Contact (Contact2) Section Styles --- */
+.contact2-section {
+    background-color: var(--color-secondary);
+    text-align: center;
+}
+
+.contact2-heading {
+    color: var(--color-dark);
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.contact2-message {
+    font-size: 1.1em;
+    color: var(--color-dark);
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact2-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1em;
+    min-width: 200px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-btn i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.whatsapp-btn {
+    background-color: #25D366;
+    color: var(--color-white);
+}
+.whatsapp-btn:hover {
+    background-color: #1DA851;
+    transform: translateY(-2px);
+}
+
+.email-btn {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+}
+.email-btn:hover {
+    background-color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.call-btn {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    border: 2px solid var(--color-dark);
+}
+.call-btn:hover {
+    background-color: var(--color-primary);
+    transform: translateY(-2px);
+    border-color: var(--color-primary);
+}
+
+
+/* --- Footer V2 Styles --- */
+.footer-v2 {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    padding: 60px 0 20px;
+    border-top: 5px solid var(--color-primary);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 30px;
+    padding-bottom: 40px;
+}
+
+.footer-logo {
+    display: block;
+    color: var(--color-primary);
+    font-size: 2em;
+    font-weight: 800;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+.footer-mission {
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #bbb;
+}
+
+.footer-social a {
+    color: var(--color-light);
+    font-size: 1.5em;
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: var(--color-primary);
+}
+
+.footer-col-v2 h4 {
+    color: var(--color-primary);
+    font-size: 1.2em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.footer-col-v2 ul {
+    list-style: none;
+}
+
+.footer-col-v2 ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col-v2 ul li a,
+.footer-contact p {
+    color: var(--color-light);
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.footer-col-v2 ul li a:hover {
+    color: var(--color-secondary);
+}
+
+.footer-contact p i {
+    margin-right: 10px;
+    color: var(--color-primary);
+    font-size: 1.1em;
+    width: 20px;
+}
+
+.footer-bottom-v2 {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #555;
+    font-size: 0.9em;
+    color: #aaa;
+}
+
+/* Lightbox Styles (Needed for Gallery) */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 85%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.lightbox-caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: var(--color-light);
+    padding: 10px 0;
+    font-size: 1.2em;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--color-primary);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Lightbox Animations */
+.lightbox-content, #lightbox-caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)}
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+
+/* --- Media Queries for Responsiveness (Consolidated) --- */
+
+/* Tablet and Medium Screen Adjustments */
+@media (max-width: 900px) {
+    /* Story Section */
+    .story-feature-block,
+    .story-feature-block.reverse-layout {
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+    .story-details-card, .story-image-container {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    .story-details-card { order: 2; }
+    .story-feature-block:not(.reverse-layout) .story-image-container { order: 1; }
+    .story-final-feature-block .full-width-image { height: 200px; }
+
+    /* Services Section */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    .featured-service-card {
+        grid-column: 1 / -1;
+        flex-direction: column;
+    }
+    .featured-service-card .service-details {
+        order: 2;
+        padding: 20px;
+    }
+    .featured-service-card .service-image-container {
+        order: 1;
+        height: 200px;
+        border-radius: 8px 8px 0 0;
+    }
+    .standard-service-card.text-focused .service-details {
+        min-height: unset;
+    }
+
+    /* CEO Section */
+    .ceo-cards-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .ceo-card {
+        flex: 1 1 100%;
+        max-width: 450px;
+    }
+
+    /* Footer Section */
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px 20px;
+    }
+
+    /* Gallery Section - Reset complex layout */
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+    .gallery-grid .gallery-item {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+        min-height: 100px;
+    }
+}
+
+/* Mobile Screen Adjustments */
+@media (max-width: 768px) {
+    .section-padding { padding: 50px 0; }
+    .hero h2 { font-size: 2.2em; }
+
+    /* Hamburger Menu Logic */
+    .hamburger-btn { display: block; }
+    .nav-menu {
+        position: fixed;
+        top: 65px;
+        right: 0;
+        width: 250px;
+        height: 100%;
+        background-color: var(--color-primary);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 999;
+    }
+    .nav-menu.active { transform: translateX(0); }
+    .nav-menu ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+    .nav-menu ul li {
+        margin: 10px 0;
+        padding: 10px 0;
+        border-bottom: 1px solid var(--color-secondary);
+    }
+    .nav-cta {
+        margin-left: 0;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    /* Other Sections */
+    .review-grid { grid-template-columns: 1fr; }
+    .contact2-buttons { flex-direction: column; gap: 15px; }
+    .contact-btn { min-width: 80%; margin: 0 auto; }
+}
+
+@media (max-width: 550px) {
+    /* Footer Section */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .footer-col-v2 h4, .footer-logo { text-align: center; }
+    .footer-col-v2 ul li a, .footer-contact p { justify-content: center; }
+    
+    /* Gallery Section */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
